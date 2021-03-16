@@ -62,7 +62,11 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export PLATFORM_SECURITY_PATCH="2099-12-31"
 	export PLATFORM_VERSION="16.1.0"
 	export TARGET_DEVICE_ALT="RMX1941,RMX1945,realmec2"
-	export TW_DEFAULT_LANGUAGE="en"#
+	export TW_DEFAULT_LANGUAGE="en"
+	export OF_SCREEN_H=2340
+	export OF_STATUS_H=76
+	export OF_STATUS_INDENT_LEFT=48
+	export OF_STATUS_INDENT_RIGHT=48
 	
 # let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then

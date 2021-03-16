@@ -46,18 +46,18 @@ Features| Accelerometer, proximity, compass
 ## Getting Started ##
 ---------------
 
-To get started, you'll need to get
+To get started with OMNI sources to build TWRP, you'll need to get
 familiar with [Git and Repo](https://source.android.com/source/using-repo.html).
 
 # repo init
 
-To initialize your local repository using the OFRP trees to build Recovery, use a command like this:
+To initialize your local repository using the OMNIROM trees to build TWRP, use a command like this:
 
-    repo init -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
-    
+    repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
+
 To initialize a shallow clone, which will save even more space, use a command like this:
 
-    repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
+    repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
 
 # repo sync
 

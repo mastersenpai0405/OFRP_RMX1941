@@ -60,7 +60,3 @@ if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
 	export | grep "TARGET_" >> $FOX_BUILD_LOG_FILE
 	export | grep "TW_" >> $FOX_BUILD_LOG_FILE
 fi
-
-for var in eng user userdebug; do
-  add_lunch_combo omni_RMX1941-$var
-done

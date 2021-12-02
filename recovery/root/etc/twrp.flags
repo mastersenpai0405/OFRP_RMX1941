@@ -1,0 +1,35 @@
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+# MOUNT
+/system		            ext4    /dev/block/platform/bootdevice/by-name/system         flags=display="System";wipeingui;
+/system_image           emmc    /dev/block/platform/bootdevice/by-name/system            flags=display="System_image";    
+/vendor                 ext4    /dev/block/platform/bootdevice/by-name/vendor            flags=display="Vendor";wipeingui;
+/vendor_image           emmc    /dev/block/platform/bootdevice/by-name/vendor            flags="display="Vendor_image";
+
+# TWRP ADDITIONAL FLAGS
+/data			ext4	/dev/block/platform/bootdevice/by-name/userdata		flags=fileencryption=aes-256-xts
+/vbmeta			emmc	/dev/block/platform/bootdevice/by-name/vbmeta
+/cache			ext4	/dev/block/platform/bootdevice/by-name/cache
+/persist		ext4    /dev/block/platform/bootdevice/by-name/persist		flags=display"Persist";backup=1;
+/proinfo		emmc	/dev/block/platform/bootdevice/by-name/proinfo
+/nvdata			ext4	/dev/block/platform/bootdevice/by-name/nvdata		flags=display="nvdata";backup=1
+/nvram			emmc	/dev/block/platform/bootdevice/by-name/nvram		flags=display="nvram";backup=1
+/protect_f		ext4	/dev/block/platform/bootdevice/by-name/protect1		flags=display="protect_f";backup=1
+/protect_s		ext4	/dev/block/platform/bootdevice/by-name/protect2		flags=display="protect_s";backup=1
+/lk				emmc	/dev/block/platform/bootdevice/by-name/lk
+/lk2			emmc	/dev/block/platform/bootdevice/by-name/lk2
+/para			emmc	/dev/block/platform/bootdevice/by-name/misc			flags=display="para";wipeingui;
+/boot			emmc	/dev/block/platform/bootdevice/by-name/boot
+/recovery		emmc	/dev/block/platform/bootdevice/by-name/recovery
+/logo			emmc	/dev/block/platform/bootdevice/by-name/logo
+/expdb			emmc	/dev/block/platform/bootdevice/by-name/expdb
+/seccfg			emmc	/dev/block/platform/bootdevice/by-name/seccfg
+/tee1			emmc	/dev/block/platform/bootdevice/by-name/tee1
+/tee2			emmc	/dev/block/platform/bootdevice/by-name/tee2
+/persistent		emmc	/dev/block/platform/bootdevice/by-name/frp
+/dtbo			emmc    /dev/block/platform/bootdevice/by-name/dtbo
+
+/external_sd	auto	/dev/block/mmcblk1p1	/dev/block/mmcblk1
+/usbotg			auto    /dev/block/sda1			/dev/block/sda				flags=display="Usb-Otg";storage;removable;backup=0;
